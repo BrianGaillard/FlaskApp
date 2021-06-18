@@ -25,10 +25,20 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<p> Name List: {{ rankings }}</p>
+
+
+			{% for i in range ( length ) %}
+			<div class="row">
+			<h3> {{i+1}}: </h3>
+			<p>{{rankings[i][0]}} with {{rankings[i][1]}} points!</p> <br></br>
+			</div>
+			{% endfor %}
 		</div>
-	</div>
+		<form method="POST" action="">
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
 </body>
 
 </html>

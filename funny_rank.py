@@ -21,4 +21,6 @@ def FunnyRankings():
                             funnyval = funnyval + 1
         ranks.append([data[user]['user'], funnyval])
 
+    ranks.sort(key= lambda ranks : ranks[1])
+
     return ranks
