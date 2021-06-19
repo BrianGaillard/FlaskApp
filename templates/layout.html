@@ -17,28 +17,38 @@
 
 <body>
 
+	<!-- Header Content -->
+	<header class="py-5 mb-5" style="background-color: #D98204;">
+    	<div class="container h-100 text-center">
+      		<div class="row h-100 align-items-center">
+        		<div class="col-lg-12">
+        			<h1>Dunder Mifflin Bi-Weekly Laugh Rankings</h1>
+        		</div>
+      		</div>
+    	</div>
+  	</header>
+
 	<!-- Page Content -->
 	<div class="container">
-		<div class="row">
-			<h1>Hello :)</h1>
-	  </div>
-	</div>
-
-	<div class="container">
-
 
 			{% for i in range ( length ) %}
-			<div class="row">
-			<h3> {{i+1}}: </h3>
-			<p>{{rankings[i][0]}} with {{rankings[i][1]}} points!</p> <br></br>
+<div class="row">
+
+			<h3 class="pr-3"> {{i+1}}: </h3>
+			<h6 class="pt-2">{{rankings[i][0]}}</h6>
+			<p class="ml-3 pt-1">with {{rankings[i][1]}} points!</p> <br></br>
 			</div>
+
 			{% endfor %}
+
 		</div>
 
-		<form method="POST" action="">
-			<input type="submit" name="submit_button" value="High to Low">
-			<input type="submit" name="submit_button1" value="Low to High">
+		<div class="container">
+			<form method="POST" action="">
+				<input type="submit" name="submit_button" value="High to Low">
+				<input type="submit" name="submit_button1" value="Low to High">
 		</form>
+	</div>
 </body>
 
 </html>
