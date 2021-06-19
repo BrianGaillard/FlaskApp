@@ -3,6 +3,7 @@ import json
 
 
 def FunnyRankings():
+    # read in data and store data
     f = open('data.json')
 
     data = json.load(f)
@@ -11,6 +12,8 @@ def FunnyRankings():
 
     ranks = []
 
+    # iterate through dictionary, save the names of users as well as how
+    # many times they said something funny
     for user in range(len(data)):
         funnyval = 0
         for convo in range(len(data[user]['conversations'])):
@@ -21,6 +24,7 @@ def FunnyRankings():
                             funnyval = funnyval + 1
         ranks.append([data[user]['user'], funnyval])
 
+    # sort the list
     ranks.sort(key= lambda ranks : ranks[1])
 
     return ranks
